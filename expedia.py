@@ -9,7 +9,8 @@ def parse(source,destination,date):
 		try:
 			url = "https://www.expedia.com/Flights-Search?trip=oneway&leg1=from:{0},to:{1},departure:{2}TANYT&passengers=adults:1,children:0,seniors:0,infantinlap:Y&options=cabinclass%3Aeconomy&mode=search&origref=www.expedia.com".format(source,destination,date)
 			response = requests.get(url)
-			parser = html.fromstring(response.text)
+			headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
+			parser = html.fromstring(response.text, headers=headers, verify=False)
 			json_data_xpath = parser.xpath("//script[@id='cachedResultsJson']//text()")
 			raw_json =json.loads(json_data_xpath[0])
 			flight_data = json.loads(raw_json["content"])
