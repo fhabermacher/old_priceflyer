@@ -6,6 +6,6 @@ Install package
   
   lxml
     
-    For etree to work, you may need to care to have the right lxml version, e.g.
+    For etree to work, you may need to care to have the right lxml version installed
       
-      pip3.6 install lxml==3.6.0
+      Cf. https://lxml.de/installation.html for info
