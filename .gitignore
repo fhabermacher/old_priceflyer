@@ -1,1 +1,7 @@
 .idea/workspace.xml
+temp/
+old/
+sub/
+venv/
+resources/
+ZRH-LON-flight-results.json
